@@ -1,0 +1,6 @@
+# Veri gizliliği (ZORUNLU)
+- Gerçek mikro veri, birim düzeyi kayıt, kişisel veri (KVKK) ve gizli istatistiki bilgi prompta yapıştırılmaz, repoya girmez, loglanmaz.
+- Örnek ve test için yalnızca sentetik/anonim veri kullan (`data/sample/`).
+- Bulut modeline gidecek her içerik "kamuya açıklanabilir mi?" sorusundan geçer. Cevap hayırsa iş yerel çözümle (Faz 2) yapılır veya yapılmaz.
+- Çıktılarda küçük hücre/ifşa riski olan kırılımlar üretme; gizlilik kuralı gerekiyorsa `kvkk-kontrol` skill'ini çalıştır.
+- Hook'lar `.env`, `data/raw/`, `data/private/` erişimini engeller; bunu atlatmaya çalışma.

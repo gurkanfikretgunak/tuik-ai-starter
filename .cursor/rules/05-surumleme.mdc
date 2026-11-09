@@ -1,0 +1,20 @@
+---
+description: Sürümleme
+alwaysApply: true
+---
+# Sürümleme
+## Web (`apps/web/package.json`) — tek doğruluk kaynağı
+Arayüzde görünen sürüm etiketi bu alandan okunur, elle yazılmaz.
+| Artış | Ne zaman | Örnek |
+|---|---|---|
+| PATCH | Düzeltme, metin, stil, küçük bileşen değişikliği | tablo sütunu, a11y düzeltmesi |
+| MINOR | **Yeni görünüm** (yeni `page.tsx` / ana rota) | `/raporlar` sayfası |
+| MAJOR | Operatörler için uyumsuz değişiklik | ortam değişkeni yeniden adlandırma |
+Birden çok değişiklik birlikte gelirse **en yüksek** seviye uygulanır. Yalnızca doküman değişikliği sürüm artırmaz.
+
+## Ajan rehberi sürümü (`AGENTS.md` → `AGENTS_BASE_VERSION`)
+Ajanlara yönelik kurallar anlamlı biçimde değişirse aynı commit'te sürüm artırılır:
+PATCH yazım/açıklama · MINOR yeni bölüm veya akış · MAJOR zorunlu davranışı kaldıran/uyumsuz değişiklik.
+
+## Genel
+`CHANGELOG.md` biçimi: sürüm/tarih başlığı + `### Eklendi / Değişti / Düzeltildi`.

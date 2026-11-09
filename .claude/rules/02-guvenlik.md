@@ -1,0 +1,8 @@
+# Güvenlik
+- Sır (anahtar, parola, token) koda yazılmaz; ortam değişkeni kullan, `.env.example` güncelle.
+- Tüm dış girdi sunucuda doğrulanır (Go: struct doğrulama, Python: tip + aralık kontrolü, Web: şema).
+- SQL'de parametreli sorgu; HTML'de kaçışlanmış çıktı.
+- Bağımlılık eklerken bakım durumu ve lisansını kontrol et.
+- Webhook, bot token, API anahtarı, SMTP parolası ve kişisel kimlikler (chat id vb.) **asla** commit edilmez; dokümanlarda yer tutucu kullan.
+- Entegrasyon kimlik bilgileri repo dışında (ortam değişkeni, gizli yönetimi) tutulur; günlüklere, ekran görüntülerine ve sürüm notlarına yazılmaz.
+- Örnek ortam dosyaları: `.env.example` (gerçek değer yok).

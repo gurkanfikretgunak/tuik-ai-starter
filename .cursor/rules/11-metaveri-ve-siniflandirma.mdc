@@ -1,0 +1,11 @@
+---
+description: Metaveri ve sınıflama
+globs: packages/contracts/**,compute/**,services/**
+alwaysApply: false
+---
+# Metaveri ve sınıflama
+- Her gösterge/seri metaveriyle gelir: kod, ad (TR/EN), birim, periyot, kapsam, kaynak, yöntem notu, revizyon politikası, gizlilik sınıfı (`istatistik-gostergesi` skill'i).
+- Sınıflama kodları **sürümüyle** saklanır (NACE Rev.2 vb.); sürümsüz kod kabul edilmez. Eşlemeler `siniflandirma-esleme` skill'iyle yapılır.
+- Referans sınıflama tabloları resmî kaynaktan alınır; model çıktısından veya hafızadan yazılmaz.
+- Zaman: ISO 8601 (`2026-03`, `2026-Q1`), saat dilimi açık. Sayısal ondalık ayracı yalnızca sunumda `tr-TR`; veri değişiminde nokta.
+- Sözleşme değişikliği geriye uyumsuzsa sürüm yükseltilir ve CHANGELOG'a yazılır.

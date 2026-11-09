@@ -1,0 +1,10 @@
+---
+description: Zafiyet takibi
+alwaysApply: true
+---
+# Zafiyet takibi
+- Bağımlılık ekleyen/güncelleyen her PR `make audit` çalıştırır; yeni bulgular `docs/security/zafiyet-kayitlari.md` içine (`ZAF-YYYY-NNN`) işlenir.
+- Her kayıtta: kaynak, bileşen, önem, durum, **sorumlu**, **hedef tarih**. Sahipsiz kayıt bırakılmaz.
+- Süresi geçen kritik/yüksek kayıt varsa yeni özellik PR'ı açmadan önce ele alınır veya gerekçeli "Kabul edildi (risk)" onayı yazılır.
+- Düzeltme PR'ı kayıt ID'sini içerir; düzeltmeden sonra durum `Düzeltildi` yapılır ve test eklenir.
+- Hook bulguları (`make audit-list`) haftalık gözden geçirilir.

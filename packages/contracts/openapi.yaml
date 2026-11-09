@@ -1,0 +1,69 @@
+openapi: 3.0.3
+info:
+  title: TÜİK AI Starter API
+  version: 0.1.0
+paths:
+  /health:
+    get:
+      summary: Servis sağlık kontrolü
+      responses:
+        "200":
+          description: Servis çalışıyor
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status: { type: string, example: ok }
+  /series/{code}:
+    get:
+      summary: Seriyi koduyla getir
+      parameters:
+        - name: code
+          in: path
+          required: true
+          schema: { type: string, maxLength: 64 }
+      responses:
+        "200":
+          description: Seri
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Series" }
+        "400":
+          description: Geçersiz kod
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+        "404":
+          description: Seri bulunamadı
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code: { type: string }
+            message: { type: string }
+    Observation:
+      type: object
+      properties:
+        period: { type: string, example: "2024-01" }
+        region: { type: string }
+        value: { type: number, nullable: true, description: "Gizli hücrede null" }
+        status:
+          type: string
+          enum: [geçici, kesin, revize, gizli, tahmini]
+    Series:
+      type: object
+      properties:
+        code: { type: string }
+        name: { type: string }
+        unit: { type: string }
+        observations:
+          type: array
+          items: { $ref: "#/components/schemas/Observation" }

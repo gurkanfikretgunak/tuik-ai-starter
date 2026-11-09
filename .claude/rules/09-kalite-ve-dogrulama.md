@@ -1,0 +1,11 @@
+---
+paths:
+  - "compute/**"
+---
+# Kalite ve doğrulama
+- Her hesaplama için: (1) elle hesaplanmış küçük örnek, (2) bağımsız ikinci yöntem veya yeniden hesap, (3) sınır durumları (boş, NaN, sıfır, negatif, tek gözlem).
+- Toplam tutarlılığı: kırılımların toplamı genel toplamla uyuşmalı (yuvarlama toleransı açıkça belirtilir).
+- Dönem/seri kontrolü: eksik dönem, çift kayıt, birim değişimi, seri kırılması.
+- Yapay zekâ ürettiği formülü kaynakla doğrula; "kendinden emin" cevap kanıt değildir.
+- Sayısal karşılaştırmada `==` yerine tolerans (`pytest.approx`).
+- Doğrulama kuralları adlandırılır ve raporlanır; sessizce düzeltme yapılmaz.

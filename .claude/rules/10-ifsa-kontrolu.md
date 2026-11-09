@@ -1,0 +1,12 @@
+---
+paths:
+  - "compute/**"
+  - "services/**"
+  - "apps/web/**"
+---
+# İfşa kontrolü
+- Yayımlanan/sunulan her tablo, grafik ve API yanıtı ifşa kontrolünden geçer (`ifsa-kontrolu` skill'i).
+- Eşik değerleri (en az birim sayısı, baskınlık oranları) **kurum kararıdır**: parametre olarak alınır, kodda sabit yazılmaz.
+- Bastırılan hücre `gizli` kodlanır; `0`/boş/`NaN` bırakılmaz. Toplamdan geri çıkarılabilen hücreler için ikincil bastırma uygulanır.
+- API'de filtre kombinasyonları ile kırılım derinleştirilerek ifşa riski doğurulabilir; sorgu sınırı ve minimum hücre kontrolü sunucuda yapılır.
+- Ham/birim düzeyi veri uç noktaları yayına açılmaz.

@@ -1,0 +1,10 @@
+---
+paths:
+  - "compute/**"
+---
+# Python hesaplama kuralları
+- Python 3.11+, tip ipuçları zorunlu, `ruff` ile biçim.
+- Hesaplama fonksiyonları saf (yan etkisiz) ve test edilebilir olmalı; her biri doctest veya pytest örneği içerir.
+- Formüller docstring'de açıklanır (kaynak/metodoloji referansı ile).
+- Eksik değer, sıfıra bölme ve boş girdi durumları açıkça ele alınır.
+- Notebook'lar commit öncesi çıktısı temizlenmiş olarak eklenir.

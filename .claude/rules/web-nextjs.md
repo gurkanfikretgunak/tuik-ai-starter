@@ -1,0 +1,15 @@
+---
+paths:
+  - "apps/web/**"
+---
+# Next.js kuralları
+- App Router, TypeScript strict. Sunucu bileşeni varsayılan; `"use client"` yalnızca gerektiğinde.
+- Veri çekme sunucuda; API tipleri `packages/contracts` ile uyumlu olmalı.
+- Erişilebilirlik: semantik HTML, klavye erişimi, yeterli kontrast, `alt` metinleri.
+- Arayüz metinleri Türkçe; sayı/tarih biçimleri `tr-TR` yerel ayarıyla.
+- Bileşen başına bir sorumluluk; test: Vitest + Testing Library.
+- **Next.js sürümü eğitim verinizden farklı olabilir:** kod yazmadan önce `node_modules/next/dist/docs/` altındaki ilgili kılavuzu oku; kullanımdan kaldırma uyarılarını dikkate al.
+- Tasarım kararları `DESIGN.md` içinde tutulur (bkz. `tasarim-dokumani` skill'i); yeni ekran bu dokümana uyar.
+- Arama/süzme: Türkçe karakter duyarsız eşleştirme (`İ/ı/I/i`) için `src/lib/tr-search.ts` kullanılır; kendi `toLowerCase()` çözümünü yazma.
+- Veri kaynağı doğrudan bileşenden çekilmez; `src/lib/data` adaptörü üzerinden alınır (bkz. `veri-adaptoru` skill'i).
+- Sayısal kimlikler (sicil no, kod) `font-mono tabular-nums`.

@@ -1,0 +1,1 @@
+Kopyalanacak parça: `compute`.

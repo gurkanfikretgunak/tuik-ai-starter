@@ -1,0 +1,5 @@
+# MCP kullanımı
+- Önerilen: **Context7** (güncel kütüphane dokümanı), **GitLens/git** (geçmiş). Proje paylaşımlı MCP'leri `.mcp.json` içine yazılır; kimlik bilgisi **asla** yazılmaz.
+- MCP araçları da `01-veri-gizliligi.md` kapsamındadır: hassas veri MCP üzerinden dış servise gönderilmez.
+- Tarayıcı veya istemci tarafında araç yapılandırmasından iç servislere doğrudan istek atılmaz; erişim sunucu tarafı geçit (gateway) üzerinden olur.
+- Yeni MCP eklemeden önce: ne veri görür, nereye gider, kim yetkilendirir? PR'da yaz.

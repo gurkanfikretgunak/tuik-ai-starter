@@ -1,0 +1,427 @@
+{
+  "sentetik": true,
+  "seed": 42,
+  "uretim": "scripts/generate-sample-data.mjs",
+  "gozlemler": [
+    {
+      "donem": "2024-01",
+      "bolge": "A",
+      "deger": 100.3,
+      "birim_sayisi": 6,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-02",
+      "bolge": "A",
+      "deger": 101.1,
+      "birim_sayisi": 9,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-03",
+      "bolge": "A",
+      "deger": 100.6,
+      "birim_sayisi": 7,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-04",
+      "bolge": "A",
+      "deger": 100.2,
+      "birim_sayisi": 8,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-05",
+      "bolge": "A",
+      "deger": 101,
+      "birim_sayisi": 6,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-06",
+      "bolge": "A",
+      "deger": 100.6,
+      "birim_sayisi": 11,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-07",
+      "bolge": "A",
+      "deger": 101.2,
+      "birim_sayisi": 4,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-08",
+      "bolge": "A",
+      "deger": 100.7,
+      "birim_sayisi": 7,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-09",
+      "bolge": "A",
+      "deger": 101.2,
+      "birim_sayisi": 8,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-10",
+      "bolge": "A",
+      "deger": 100.3,
+      "birim_sayisi": 6,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-11",
+      "bolge": "A",
+      "deger": 101.1,
+      "birim_sayisi": 1,
+      "durum": "geçici"
+    },
+    {
+      "donem": "2024-12",
+      "bolge": "A",
+      "deger": 101.3,
+      "birim_sayisi": 1,
+      "durum": "geçici"
+    },
+    {
+      "donem": "2024-01",
+      "bolge": "B",
+      "deger": 99.6,
+      "birim_sayisi": 1,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-02",
+      "bolge": "B",
+      "deger": 99.1,
+      "birim_sayisi": 10,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-03",
+      "bolge": "B",
+      "deger": 99.3,
+      "birim_sayisi": 1,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-04",
+      "bolge": "B",
+      "deger": 98.7,
+      "birim_sayisi": 11,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-05",
+      "bolge": "B",
+      "deger": 98.8,
+      "birim_sayisi": 10,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-06",
+      "bolge": "B",
+      "deger": 98.5,
+      "birim_sayisi": 6,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-07",
+      "bolge": "B",
+      "deger": 97.7,
+      "birim_sayisi": 1,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-08",
+      "bolge": "B",
+      "deger": 97.9,
+      "birim_sayisi": 8,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-09",
+      "bolge": "B",
+      "deger": 97.5,
+      "birim_sayisi": 8,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-10",
+      "bolge": "B",
+      "deger": 97.1,
+      "birim_sayisi": 4,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-11",
+      "bolge": "B",
+      "deger": 97.6,
+      "birim_sayisi": 11,
+      "durum": "geçici"
+    },
+    {
+      "donem": "2024-12",
+      "bolge": "B",
+      "deger": 97.7,
+      "birim_sayisi": 3,
+      "durum": "geçici"
+    },
+    {
+      "donem": "2024-01",
+      "bolge": "C",
+      "deger": 99.7,
+      "birim_sayisi": 4,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-02",
+      "bolge": "C",
+      "deger": 98.9,
+      "birim_sayisi": 8,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-03",
+      "bolge": "C",
+      "deger": 99.4,
+      "birim_sayisi": 9,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-04",
+      "bolge": "C",
+      "deger": 100.3,
+      "birim_sayisi": 2,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-05",
+      "bolge": "C",
+      "deger": 101.3,
+      "birim_sayisi": 6,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-06",
+      "bolge": "C",
+      "deger": 102.3,
+      "birim_sayisi": 2,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-07",
+      "bolge": "C",
+      "deger": 101.6,
+      "birim_sayisi": 1,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-08",
+      "bolge": "C",
+      "deger": 101.4,
+      "birim_sayisi": 6,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-09",
+      "bolge": "C",
+      "deger": 101.8,
+      "birim_sayisi": 11,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-10",
+      "bolge": "C",
+      "deger": 101,
+      "birim_sayisi": 9,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-11",
+      "bolge": "C",
+      "deger": 102,
+      "birim_sayisi": 4,
+      "durum": "geçici"
+    },
+    {
+      "donem": "2024-12",
+      "bolge": "C",
+      "deger": 102.5,
+      "birim_sayisi": 3,
+      "durum": "geçici"
+    },
+    {
+      "donem": "2024-01",
+      "bolge": "D",
+      "deger": 100.1,
+      "birim_sayisi": 10,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-02",
+      "bolge": "D",
+      "deger": 99.5,
+      "birim_sayisi": 12,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-03",
+      "bolge": "D",
+      "deger": 99.7,
+      "birim_sayisi": 11,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-04",
+      "bolge": "D",
+      "deger": 99.7,
+      "birim_sayisi": 7,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-05",
+      "bolge": "D",
+      "deger": 99.4,
+      "birim_sayisi": 8,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-06",
+      "bolge": "D",
+      "deger": 99.2,
+      "birim_sayisi": 9,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-07",
+      "bolge": "D",
+      "deger": 98.9,
+      "birim_sayisi": 6,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-08",
+      "bolge": "D",
+      "deger": 99.7,
+      "birim_sayisi": 9,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-09",
+      "bolge": "D",
+      "deger": 100.8,
+      "birim_sayisi": 11,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-10",
+      "bolge": "D",
+      "deger": 100.7,
+      "birim_sayisi": 7,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-11",
+      "bolge": "D",
+      "deger": 100.4,
+      "birim_sayisi": 2,
+      "durum": "geçici"
+    },
+    {
+      "donem": "2024-12",
+      "bolge": "D",
+      "deger": 100.9,
+      "birim_sayisi": 4,
+      "durum": "geçici"
+    },
+    {
+      "donem": "2024-01",
+      "bolge": "E",
+      "deger": 100.7,
+      "birim_sayisi": 11,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-02",
+      "bolge": "E",
+      "deger": 100,
+      "birim_sayisi": 6,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-03",
+      "bolge": "E",
+      "deger": 100.7,
+      "birim_sayisi": 2,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-04",
+      "bolge": "E",
+      "deger": 101.8,
+      "birim_sayisi": 3,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-05",
+      "bolge": "E",
+      "deger": 102.3,
+      "birim_sayisi": 9,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-06",
+      "bolge": "E",
+      "deger": 101.8,
+      "birim_sayisi": 5,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-07",
+      "bolge": "E",
+      "deger": 101.2,
+      "birim_sayisi": 8,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-08",
+      "bolge": "E",
+      "deger": 101,
+      "birim_sayisi": 3,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-09",
+      "bolge": "E",
+      "deger": 101.4,
+      "birim_sayisi": 11,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-10",
+      "bolge": "E",
+      "deger": 101.1,
+      "birim_sayisi": 10,
+      "durum": "kesin"
+    },
+    {
+      "donem": "2024-11",
+      "bolge": "E",
+      "deger": 101,
+      "birim_sayisi": 2,
+      "durum": "geçici"
+    },
+    {
+      "donem": "2024-12",
+      "bolge": "E",
+      "deger": 101.8,
+      "birim_sayisi": 5,
+      "durum": "geçici"
+    }
+  ]
+}
