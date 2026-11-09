@@ -6,3 +6,20 @@
 - Webhook, bot token, API anahtarı, SMTP parolası ve kişisel kimlikler (chat id vb.) **asla** commit edilmez; dokümanlarda yer tutucu kullan.
 - Entegrasyon kimlik bilgileri repo dışında (ortam değişkeni, gizli yönetimi) tutulur; günlüklere, ekran görüntülerine ve sürüm notlarına yazılmaz.
 - Örnek ortam dosyaları: `.env.example` (gerçek değer yok).
+
+## Evet / Hayır
+| Durum | Doğru | Yanlış |
+|---|---|---|
+| Anahtar gerekli | Ortam değişkeni + örnek ortam dosyasında boş yer tutucu | Kodda/commit'te değer |
+| Dış girdi | Sunucuda doğrula (Go struct, Python tip+aralık, Web şema) | İstemci doğrulamasına güven |
+| SQL | Parametreli sorgu | String birleştirme |
+| HTML çıktısı | Kaçışlı (React varsayılanı) | `dangerouslySetInnerHTML` ile ham girdi |
+| Dokümanda örnek anahtar | `<YER_TUTUCU>` | Gerçek görünen değer |
+| Yeni paket | Bakım durumu + lisans + gerçekten var mı kontrol | Hafızadan paket adı |
+
+## Do / Don't
+- DO: Go'da `os.Getenv` ile oku, eksikse açık hata ver; Python'da `os.environ`; Next.js'de sunucu tarafı değişken (istemciye `NEXT_PUBLIC_` ile sır verme).
+- DO: hata mesajında iç ayrıntı (yığın, yol, sorgu) sızdırma; kullanıcıya genel kod + mesaj dön.
+- DON'T: sırrı log, ekran görüntüsü, sürüm notu veya PR açıklamasına yaz.
+- DON'T: tarayıcıdan iç servise doğrudan istek at; sunucu tarafı geçit kullan.
+- Bağımlılık değişti → `make audit` (bkz. `14-zafiyet-takibi.md`).

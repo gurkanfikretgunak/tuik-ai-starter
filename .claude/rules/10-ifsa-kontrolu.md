@@ -10,3 +10,24 @@ paths:
 - Bastırılan hücre `gizli` kodlanır; `0`/boş/`NaN` bırakılmaz. Toplamdan geri çıkarılabilen hücreler için ikincil bastırma uygulanır.
 - API'de filtre kombinasyonları ile kırılım derinleştirilerek ifşa riski doğurulabilir; sorgu sınırı ve minimum hücre kontrolü sunucuda yapılır.
 - Ham/birim düzeyi veri uç noktaları yayına açılmaz.
+
+## Kontrol örneği (sentetik; eşikler PARAMETRE, kurum kararı)
+| Hücre | Birim sayısı | `min_count`=`<PARAMETRE>` sonucu |
+|---|---|---|
+| A | büyük | göster |
+| B | eşiğin altında | `gizli` |
+| C | toplamdan çıkarılabilir | ikincil bastırma → `gizli` |
+Araçlar: `compute/src/tuik_calc/disclosure.py` (`is_small_cell`, `is_dominated`, `suppress_row`, `secondary_suppress`).
+
+## Evet / Hayır
+| Durum | Doğru | Yanlış |
+|---|---|---|
+| Bastırılan hücre | `gizli` | `0`, boş, `NaN` |
+| Eşik | parametre/yapılandırma | kodda sabit sayı |
+| API filtresi | sunucuda min. hücre + sorgu sınırı | istemciye bırak |
+| Birim düzeyi uç nokta | yayına açma | açık bırak |
+| Toplam satırı | ikincil bastırma kontrol et | yalnız küçük hücreyi gizle |
+
+## Do / Don't
+- DO: tablo/grafik/API yanıtı çıkmadan `/ifsa-kontrol` veya `ifsa-kontrolu` skill'i.
+- DON'T: filtre kombinasyonlarıyla gizli hücreyi türetilebilir bırak (fark saldırısı).

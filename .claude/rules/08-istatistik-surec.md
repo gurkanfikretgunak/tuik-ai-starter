@@ -13,3 +13,22 @@ GSBPM aşamalarına göre çalış (`gsbpm-surec-haritasi` skill'i). Genel ilkel
 - **Birim ve periyot** her sayının yanında bilinir (TL/bin TL, yıllık/aylık, referans dönem).
 - Notebook keşif içindir; üretim hesabı modül olarak `compute/src` içinde, testli yazılır.
 - Kurumsal eşik, kural ve yöntemler koda gömülmez; yapılandırma + yöntem belgesinden gelir.
+
+## Eksik değer kodları
+| Durum | Kod (örnek) | Yanlış |
+|---|---|---|
+| Birim yanıt vermedi | `yanitsiz` | `0` |
+| Soru uygulanamaz | `uygulanamaz` | boş |
+| İfşa nedeniyle gizli | `gizli` | `NaN` |
+| Değer bilinmiyor | `bilinmiyor` | `-1` |
+Gerçek kod listesi kurum/yöntem belgesinden gelir (parametre; kurum kararı).
+
+## Her çalıştırmada çıktıyla kaydet
+`veri sürümü · git commit · parametreler · seed · tarih · birim/periyot`
+
+## Do / Don't
+- DO: işi GSBPM aşamasına eşle (`/new-surec`). Üretim hesabı `compute/src/tuik_calc/` içinde modül + test.
+- DO: düzeltmeyi `önceki → sonraki + kural kodu` olarak kaydet.
+- DON'T: ham veriyi yerinde değiştir; yeni dosya/sürüm yaz.
+- DON'T: notebook'ta üretim hesabı bırak; notebook keşiftir (`compute/notebooks/`, çıktısı temiz).
+- DON'T: eşik/kuralı koda göm; yapılandırma + yöntem belgesi.

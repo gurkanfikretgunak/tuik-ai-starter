@@ -4,3 +4,23 @@
 - Bulut modeline gidecek her içerik "kamuya açıklanabilir mi?" sorusundan geçer. Cevap hayırsa iş yerel çözümle (Faz 2) yapılır veya yapılmaz.
 - Çıktılarda küçük hücre/ifşa riski olan kırılımlar üretme; gizlilik kuralı gerekiyorsa `kvkk-kontrol` skill'ini çalıştır.
 - Hook'lar `.env`, `data/raw/`, `data/private/` erişimini engeller; bunu atlatmaya çalışma.
+
+## Bu veri prompta girebilir mi?
+| Veri | Girer mi? |
+|---|---|
+| `data/sample/` sentetik seri | Evet |
+| Kendi yazdığın uydurma örnek (`<YER_TUTUCU>`) | Evet |
+| Yayımlanmış, kamuya açık toplu tablo | Evet (kaynağı belirt) |
+| Birim düzeyi kayıt, mikro veri | Hayır |
+| TCKN, ad, adres, telefon, e-posta (gerçek) | Hayır |
+| Küçük hücreli, henüz yayımlanmamış sonuç | Hayır (embargo) |
+| Parola, token, API anahtarı, bağlantı dizesi | Hayır |
+| Ortam dosyası içeriği, anahtar dosyaları | Hayır |
+
+## Do / Don't
+- DO: örnek gerekirse `scripts/generate-sample-data.mjs` ile sentetik üret; sabit seed kullan.
+- DO: hassas veri görürsen **tekrar etme**, maskele (`***`), dur ve kullanıcıyı uyar.
+- DO: emin değilsen "kamuya açıklanabilir mi?" sor; cevap hayırsa yerel çözüm (Faz 2) ya da vazgeç.
+- DON'T: gerçek veriyi "sadece deneme" diye yapıştırma, teste/fixture'a koyma, loga yazma.
+- DON'T: hook engelini (ham/gizli veri klasörü, ortam dosyası) dolaşma; engel = dur ve bildir.
+- DON'T: MCP/araç ile hassas veriyi dış servise gönderme (bkz. `07-mcp-kullanimi.md`).

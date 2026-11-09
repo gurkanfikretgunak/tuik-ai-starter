@@ -9,3 +9,21 @@ alwaysApply: false
 - Formüller docstring'de açıklanır (kaynak/metodoloji referansı ile).
 - Eksik değer, sıfıra bölme ve boş girdi durumları açıkça ele alınır.
 - Notebook'lar commit öncesi çıktısı temizlenmiş olarak eklenir.
+
+## Evet / Hayır
+| Durum | Doğru | Yanlış |
+|---|---|---|
+| Fonksiyon | saf, tip ipuçlu | global durum, dosya yazan hesap |
+| Boş girdi / sıfıra bölme | açık `ValueError` | sessiz `nan`/`inf` |
+| Eksik değer | `None` veya kodlu (`gizli`) | `0` |
+| Sayı kıyası testte | `pytest.approx` | `==` |
+| Formül | docstring'de kaynak/yöntem | açıklamasız |
+
+```python
+def percent_change(current: float, previous: float) -> float:
+    """(current - previous) / previous * 100. Kaynak: <YÖNTEM BELGESİ>."""
+    if previous == 0:
+        raise ValueError("previous must be non-zero")
+    return (current - previous) / previous * 100
+```
+Yer: `compute/src/tuik_calc/`, test: `compute/tests/test_<modül>.py`. Çalıştır: `cd compute && python -m pytest -q && python -m ruff check .`. Yeni modül: `/new-calc`.

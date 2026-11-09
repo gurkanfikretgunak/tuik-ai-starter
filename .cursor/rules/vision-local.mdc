@@ -11,3 +11,16 @@ alwaysApply: false
 - Ayrıcalıklı işlemler (sürücü, servis kurulumu) için açık kullanıcı onayı iste; değişiklikleri tutucu tut.
 - Kullanıcıya dönük metinde sistemi **deneysel** olarak etiketle; sonuçlar insan doğrulaması gerektirir.
 - Değerlendirme setleri (`evals/`) yalnızca sentetik/anonim görüntü içerir.
+
+## Evet / Hayır
+| Durum | Doğru | Yanlış |
+|---|---|---|
+| Hassas görüntü/çıktı | cihaz içinde kalır | buluta gönder |
+| Yapılandırma | kullanıcı dizininde `~/.config/<uygulama>/config.toml`; repoya `*.example` | repoya gerçek yapılandırma |
+| Günlük | olay + kod | ham görüntü, kişisel veri, sır |
+| Sürücü/servis kurulumu | açık onay iste | sessiz kur |
+| Arayüz metni | "deneysel" etiketi + insan doğrulaması notu | kesin sonuç iddiası |
+| `evals/` | sentetik/anonim görüntü | gerçek görüntü |
+
+## Do / Don't
+- DO: telemetriyi kapalı tut. DON'T: ağ çağrısı ekleme (Faz 2 henüz aktif değil; yapı: `agents-local/{vision,runtime,evals}`).

@@ -8,3 +8,21 @@ alwaysApply: false
 - Her gözlemde `durum` alanı: `geçici`, `kesin`, `revize`, `gizli`, `tahmini`.
 - Revizyonda önceki değer ve revizyon nedeni saklanır; yöntem değişikliği seri kırılması olarak işaretlenir (`yayin-ve-revizyon` skill'i).
 - Yayından önce sıra: doğrulama → ifşa kontrolü → kalite raporu → yayım bayrağı.
+
+## `durum` değerleri
+| Değer | Anlam |
+|---|---|
+| `geçici` | sonradan revize edilebilir |
+| `kesin` | revize beklenmez |
+| `revize` | önceki değer saklı, neden kayıtlı |
+| `gizli` | ifşa nedeniyle yayımlanmaz |
+| `tahmini` | model/tahmin değeri |
+
+## Yayın öncesi sıra
+1. Doğrulama 2. İfşa kontrolü 3. Kalite raporu 4. Yayım bayrağı (zaman takvimden/yapılandırmadan).
+
+## Do / Don't
+- DO: revizyonda `önceki değer + neden + zaman` sakla; yöntem değişimini seri kırılması işaretle.
+- DO: embargoda veri API/statik dosya/önbellek/log hiçbirine düşmesin.
+- DON'T: yayın zamanını koda sabitle. DON'T: eski değeri üzerine yaz.
+- Skill: `yayin-ve-revizyon`. Örnek revizyon kaydı: `{"code":"ORNEK-001","period":"2026-02","old":100.0,"new":100.4,"reason":"<NEDEN>","status":"revize"}`.

@@ -16,3 +16,34 @@ Aynı PR içinde türleri gereksiz karıştırma.
 - Açıklamayı "Ready" yapmadan önce **insan sesiyle** yaz: kısa, düz paragraflar; araç çıktısı gibi katı madde dökümü bırakma.
 - Backend + web birlikte değişiyorsa hangisinin önce yayına gideceğini yaz (önce API, sonra istemci).
 - Birleştirmeden önce sırayla: işi bitir → ship checklist (`04-ship-checklist.md`) → PR'ı güncelle → Ready → CI → merge → dalı sil.
+
+## Örnekler
+| Durum | Commit |
+|---|---|
+| Web özelliği | `feat(web): seri sayfası eklendi` |
+| API düzeltmesi | `fix(api): bulunamayan seri 404 döner` |
+| Sözleşme | `feat(contracts): /series/{code} yanıtına durum alanı eklendi` |
+| Kural/skill | `docs(ai): ifşa kuralına örnek tablo eklendi` |
+| Ticket'lı | `feat(TUIK-12): endeks hesabı eklendi` |
+| Küçük paket işi | `api: sağlık ucu zaman aşımı` |
+Yanlış: `Fix bug`, `güncelleme`, `feat: her şey`, İngilizce açıklama, geçmiş zaman yerine kafa karıştıran uzun özet.
+
+## PR açıklama şablonu
+```
+## Ne
+<1-2 cümle>
+## Neden
+<gerekçe>
+## Nasıl doğrulanır
+<komutlar: make test, make lint>
+## Risk / geri alma
+<migrasyon, yetki, veri silme yoksa "yok">
+## Ön inceleme
+- [ ] ship checklist  - [ ] kvkk-kontrol temiz  - [ ] test eklendi
+```
+
+## Do / Don't
+- DO: varsayılan dalı `gh repo view --json defaultBranchRef` ile öğren. DON'T: `main`/`master` tahmin et.
+- DO: tek konu, tek PR. DON'T: ilgisiz refactor'ı aynı PR'a kat.
+- DON'T: force push, ortak dalda geçmiş yeniden yazma (açık onay olmadan). Çakışmada dur ve bildir.
+- DON'T: kullanıcı istemeden commit/push yapma.

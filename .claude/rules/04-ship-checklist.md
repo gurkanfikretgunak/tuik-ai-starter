@@ -18,3 +18,19 @@ Bir iş, ilgili katmanın aşağıdaki maddeleri yapılmadan **bitmiş sayılmaz
 
 ## Herkes için
 - `make lint` + `make test` temiz, `kvkk-kontrol` temiz.
+
+## Hızlı karar tablosu
+| Değişiklik | Zorunlu adımlar |
+|---|---|
+| Yeni endpoint | openapi.yaml → handler/test → `api:` CHANGELOG → istemci (`/regenerate-client`) |
+| İç refactor (davranış aynı) | Test + lint; CHANGELOG yok |
+| Yeni sayfa | package.json MINOR + TR metin + `web:` CHANGELOG |
+| Metin/stil düzeltmesi | package.json PATCH + `web:` CHANGELOG |
+| Formül değişti | Docstring + `compute:` CHANGELOG; sonuç etkileniyorsa MAJOR |
+| Yalnızca doküman | Sürüm artmaz |
+
+## Do / Don't
+- DO: sırayla yap: sözleşme → kod → test → lint → CHANGELOG → sürüm. DON'T: sürümü elle arayüze yaz.
+- DO: yayımlanacak tabloyu `ifsa-kontrolu`'ndan geçir. DON'T: ifşa kontrolsüz yayım.
+- DON'T: yanına ikinci sözleşme dosyası veya ikinci istek koleksiyonu açma.
+- Son komutlar: `make lint && make test`; sonra `kvkk-kontrol` (`/ship` akışı hepsini toplar).

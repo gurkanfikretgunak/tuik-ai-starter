@@ -29,6 +29,7 @@ Skill, rule, komut, agent ve güvenlik hook'ları hazır gelir; yeni bir projeye
 ![İfşa Kontrolü](https://img.shields.io/badge/if%C5%9Fa%20kontrol%C3%BC-zorunlu-dc2626?style=flat-square)
 
 [Hızlı başlangıç](#-5-dakikada-başla) ·
+[Az prompt](#-az-prompt-hızlı-sonuç-yerel-llm-dahil) ·
 [Mimari](#️-mimari) ·
 [AI araç seti](#-ai-araç-seti) ·
 [Güvenlik](#️-güvenlik-ve-veri-gizliliği) ·
@@ -74,14 +75,27 @@ Claude Code içinde:
 
 | Komut | Açıklama |
 |---|---|
-| `make dev` | Tüm yığını (API + web) yerelde başlatır |
-| `make test` | Go, Python ve web testlerini çalıştırır |
-| `make lint` | Tüm katmanlarda lint |
+| `make dev` | API, web ve hesaplama için çalıştırma komutlarını yazdırır (servisleri kendisi başlatmaz) |
+| `make test` | Go ve Python testlerini çalıştırır (web testi için `cd apps/web && npm test`) |
+| `make lint` | Go `vet` ve Python `ruff` kontrolü |
 | `make doctor` | Geliştirme ortamını denetler |
 | `make audit` | Bağımlılık zafiyet taraması, yeni bulguları kayda ekler |
 | `make audit-list` | Açık zafiyetler ve hook bulguları |
 | `make test-hooks` | Güvenlik hook'larının davranış testleri |
 | `make sync-cursor` | `.claude` → `.cursor` eşitlemesi |
+
+## 🧠 Az prompt, hızlı sonuç (yerel LLM dahil)
+
+Skill, komut ve kurallar **varsayılanlarla, adım adım ve kopyala-yapıştır şablonlarla** yazıldı; model soru sormadan işe başlar, küçük/yerel modellerin dar bağlam penceresine de sığar.
+
+| Doküman | Ne işe yarar |
+|---|---|
+| [`docs/baglam/01-proje-haritasi.md`](docs/baglam/01-proje-haritasi.md) | Hangi dosya ne işe yarar |
+| [`docs/baglam/02-tarifler.md`](docs/baglam/02-tarifler.md) | "Şunu yapmak istiyorum" → dosyalar, komutlar, skill |
+| [`docs/baglam/03-sozluk.md`](docs/baglam/03-sozluk.md) | İstatistik, proje ve AI terimleri |
+| [`docs/baglam/04-komut-referansi.md`](docs/baglam/04-komut-referansi.md) | make, scripts, slash komutları, hook'lar |
+| [`docs/prompt-kutuphanesi.md`](docs/prompt-kutuphanesi.md) | Hazır prompt şablonları, kötü → iyi örnekler |
+| [`docs/yerel-llm.md`](docs/yerel-llm.md) | Yerel/küçük LLM ile çalışma rehberi |
 
 ## 🏗️ Mimari
 

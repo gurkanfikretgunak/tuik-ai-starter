@@ -9,3 +9,20 @@ alwaysApply: false
 - Referans sınıflama tabloları resmî kaynaktan alınır; model çıktısından veya hafızadan yazılmaz.
 - Zaman: ISO 8601 (`2026-03`, `2026-Q1`), saat dilimi açık. Sayısal ondalık ayracı yalnızca sunumda `tr-TR`; veri değişiminde nokta.
 - Sözleşme değişikliği geriye uyumsuzsa sürüm yükseltilir ve CHANGELOG'a yazılır.
+
+## Gösterge metaveri şablonu (sentetik)
+```json
+{"code":"ORNEK-001","name_tr":"Örnek Seri","name_en":"Sample Series","unit":"endeks","period":"2026-03",
+ "scope":"<KAPSAM>","source":"<KAYNAK>","method_note":"<YÖNTEM>","revision_policy":"<POLİTİKA>","confidentiality":"açık"}
+```
+## Evet / Hayır
+| Durum | Doğru | Yanlış |
+|---|---|---|
+| Sınıflama kodu | `NACE Rev.2` + kod | sürümsüz kod |
+| Tarih | `2026-03`, `2026-Q1` (ISO 8601) | `03/26` |
+| Ondalık (veri değişimi) | `12.5` | `12,5` |
+| Ondalık (sunum) | `tr-TR` biçimi | sabit nokta |
+| Sınıflama tablosu | resmî kaynaktan | hafızadan/model çıktısından |
+| Geriye uyumsuz sözleşme | sürüm yükselt + CHANGELOG | sessiz değiştir |
+
+- DO: `istatistik-gostergesi`, `siniflandirma-esleme` skill'lerini kullan. DON'T: eşlemeyi tahminle yaz.

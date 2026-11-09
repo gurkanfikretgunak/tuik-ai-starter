@@ -14,3 +14,15 @@ alwaysApply: false
 - Arama/süzme: Türkçe karakter duyarsız eşleştirme (`İ/ı/I/i`) için `src/lib/tr-search.ts` kullanılır; kendi `toLowerCase()` çözümünü yazma.
 - Veri kaynağı doğrudan bileşenden çekilmez; `src/lib/data` adaptörü üzerinden alınır (bkz. `veri-adaptoru` skill'i).
 - Sayısal kimlikler (sicil no, kod) `font-mono tabular-nums`.
+
+## Evet / Hayır
+| Durum | Doğru | Yanlış |
+|---|---|---|
+| Bileşen türü | sunucu bileşeni; etkileşim varsa `"use client"` | her yere `"use client"` |
+| Veri | `getDataSource()` (`src/lib/data`) | bileşende `fetch`/sabit veri |
+| Sayı/tarih | `src/lib/format.ts`, `tr-TR` | elle `toFixed` |
+| Türkçe arama | `src/lib/tr-search.ts` | `toLowerCase().includes()` |
+| Metin | TR | İngilizce arayüz |
+| Kimlik/kod | `font-mono tabular-nums` | normal font |
+
+Bitirmeden: `cd apps/web && npm test && npx tsc --noEmit`; görünür değişiklikte `package.json` sürümü (`05-surumleme.md`).

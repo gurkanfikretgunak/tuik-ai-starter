@@ -27,4 +27,5 @@ GSBPM akışı: `/new-surec`. Skill'ler: `gsbpm-surec-haritasi`, `veri-temizleme
 
 ## Nereye bakmalı
 - Skill'ler: `.claude/skills/` · Komutlar: `.claude/commands/` · Eğitim: `docs/egitim/`
+- Hızlı bağlam (dosya haritası, tarifler, sözlük, prompt şablonları, yerel LLM): `docs/baglam/`, `docs/prompt-kutuphanesi.md`, `docs/yerel-llm.md`
 - Yeni skill/rule/command ekleme: `docs/katki-rehberi.md`
