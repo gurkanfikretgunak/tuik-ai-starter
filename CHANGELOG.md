@@ -3,6 +3,7 @@ Biçim: sürüm/tarih + `### Eklendi / Değişti / Düzeltildi`; satır öneki `
 
 ## [0.2.1] - 2026-11-09
 ### Eklendi
+- ai: `scripts/kvkk/` KVKK kontrolcüleri (tckn, iban, contact, secrets, files, microdata, history), `run-all.sh`, allowlist, git hook kurucu, `make kvkk*` ve `make test-kvkk`
 - ai: `docs/baglam/` (proje haritası, tarifler, sözlük, komut referansı), `docs/prompt-kutuphanesi.md`, `docs/yerel-llm.md`
 - ai: `proje-baslat/templates/plan.md`
 ### Değişti

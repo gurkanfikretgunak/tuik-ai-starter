@@ -21,7 +21,7 @@ Bir iş, ilgili katmanın aşağıdaki maddeleri yapılmadan **bitmiş sayılmaz
 2. Eski sonuçları etkileyen değişiklik **MAJOR** kabul edilir ve PR'da açıkça yazılır.
 
 ## Herkes için
-- `make lint` + `make test` temiz, `kvkk-kontrol` temiz.
+- `make lint` + `make test` temiz, `kvkk-kontrol` temiz (`make kvkk` HATA vermez).
 
 ## Hızlı karar tablosu
 | Değişiklik | Zorunlu adımlar |

@@ -24,3 +24,8 @@
 - DON'T: gerçek veriyi "sadece deneme" diye yapıştırma, teste/fixture'a koyma, loga yazma.
 - DON'T: hook engelini (ham/gizli veri klasörü, ortam dosyası) dolaşma; engel = dur ve bildir.
 - DON'T: MCP/araç ile hassas veriyi dış servise gönderme (bkz. `07-mcp-kullanimi.md`).
+
+## Otomatik kontrol
+- Commit/PR öncesi `make kvkk` (hazırlanan dosyalar için `make kvkk-staged`); sır şüphesinde `make kvkk-history`. Ayrıntı ve bulgu akışı: `.claude/skills/kvkk-kontrol/SKILL.md`.
+- Bulgu maskeli raporlanır; gerçek değer prompta, loga veya PR açıklamasına yazılmaz.
+- Yanlış pozitif ancak gerekçeyle ve dar kapsamlı olarak `scripts/kvkk/allowlist.txt` içine alınır.

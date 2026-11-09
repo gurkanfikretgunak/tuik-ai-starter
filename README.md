@@ -82,6 +82,8 @@ Claude Code içinde:
 | `make audit` | Bağımlılık zafiyet taraması, yeni bulguları kayda ekler |
 | `make audit-list` | Açık zafiyetler ve hook bulguları |
 | `make test-hooks` | Güvenlik hook'larının davranış testleri |
+| `make kvkk` | KVKK/sır/mikro veri taraması: T.C. kimlik (sağlamalı), IBAN, telefon/e-posta, sırlar, dosya türleri (`kvkk-staged`, `kvkk-strict`, `kvkk-history`, `kvkk-hook`) |
+| `make test-kvkk` | KVKK kontrolcülerinin testleri |
 | `make sync-cursor` | `.claude` → `.cursor` eşitlemesi |
 
 ## 🧠 Az prompt, hızlı sonuç (yerel LLM dahil)

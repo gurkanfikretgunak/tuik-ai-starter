@@ -24,3 +24,17 @@ test-hooks:      ## hook davranış testleri
 .PHONY: sync-cursor
 sync-cursor:    ## .claude -> .cursor eşitle
 	python3 scripts/sync-cursor.py
+
+.PHONY: kvkk kvkk-staged kvkk-strict kvkk-history test-kvkk kvkk-hook
+kvkk:            ## KVKK/sır/mikro veri taraması (TCKN, IBAN, iletişim, sır, dosya, mikro veri)
+	bash scripts/kvkk/run-all.sh
+kvkk-staged:     ## yalnızca git'e hazırlanan dosyaları tara (commit öncesi)
+	bash scripts/kvkk/run-all.sh --staged
+kvkk-strict:     ## UYARI bulgularını da başarısızlık say
+	bash scripts/kvkk/run-all.sh --strict
+kvkk-history:    ## git geçmişinde de sır ara
+	bash scripts/kvkk/run-all.sh --history
+test-kvkk:       ## KVKK kontrolcülerinin sentetik fixture testleri
+	bash scripts/kvkk/test-kvkk.sh
+kvkk-hook:       ## commit öncesi KVKK kontrolünü yerel git hook'u olarak kur
+	bash scripts/kvkk/install-git-hooks.sh

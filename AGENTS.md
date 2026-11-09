@@ -1,5 +1,5 @@
 # AGENTS.md
-**`AGENTS_BASE_VERSION`:** `1.3.0` (bu rehberin sürümü; PATCH yazım · MINOR yeni bölüm/akış · MAJOR uyumsuz değişiklik — bkz. `.claude/rules/05-surumleme.md`).
+**`AGENTS_BASE_VERSION`:** `1.3.1` (bu rehberin sürümü; PATCH yazım · MINOR yeni bölüm/akış · MAJOR uyumsuz değişiklik — bkz. `.claude/rules/05-surumleme.md`).
 
 Ana kurallar `CLAUDE.md` ve `.claude/rules/` altındadır; başka agent araçları (Cursor vb.) da bunları esas almalıdır. Cursor için `make sync-cursor` ile `.cursor/` üretilir (tek kaynak `.claude/`).
 
@@ -68,4 +68,4 @@ Dil: kod EN, açıklama/arayüz/commit açıklaması TR. Veri: yalnızca `data/s
 - Küçük model/yerel LLM kullanıyorsan: önce ilgili modül `CLAUDE.md`'sini (`apps/web`, `services/api`, `compute`) ve tek bir kural dosyasını oku; işi küçük adımlara böl.
 
 ## Komutlar
-`make dev` · `make test` · `make lint` · `make doctor` · `make audit` · `make test-hooks` · `make sync-cursor`.
+`make dev` · `make test` · `make lint` · `make doctor` · `make audit` · `make test-hooks` · `make kvkk` (KVKK/sır taraması) · `make test-kvkk` · `make sync-cursor`.

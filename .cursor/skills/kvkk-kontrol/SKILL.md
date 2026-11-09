@@ -78,3 +78,28 @@ Girdi: diff'te `data/sample/yeni.csv` içinde `ahmet.ornek@gmail.test,...` ve 8 
 
 ## İlgili
 `ifsa-kontrolu` · `ai-risk-degerlendirme` · `zafiyet-takibi` · `.claude/rules/01-veri-gizliligi.md` · `.claude/rules/02-guvenlik.md` · `data-privacy-auditor` ajanı · `data/sample/README.md`
+
+## Betik kontrolcüleri (`scripts/kvkk/`) — önce bunları çalıştır
+Komutlar repo kökünde çalışır; çıktıdaki değerler **maskelidir** (ilk/son 2 karakter), bulguyu raporlarken de maskeli yaz.
+
+| Komut | Ne yapar |
+|---|---|
+| `make kvkk` | Tüm kontrolcüleri çalıştırır; HATA varsa çıkış 1 |
+| `make kvkk-staged` | Yalnızca `git add` ile hazırlanan dosyaları tarar (commit öncesi) |
+| `make kvkk-strict` | UYARI bulgularını da başarısızlık sayar |
+| `make kvkk-history` | Silinmiş olsa bile git geçmişindeki sırları arar |
+| `make test-kvkk` | Kontrolcülerin sentetik fixture testleri |
+| `make kvkk-hook` | Commit öncesi kontrolü yerel git hook'u olarak kurar (isteğe bağlı) |
+
+| Kontrolcü | Yakaladığı | Seviye |
+|---|---|---|
+| `check-tckn.sh` | Sağlaması (checksum) geçerli T.C. kimlik no; kimlik/vergi no anahtar sözcüğü yanında 11/10 haneli sayı | HATA / UYARI |
+| `check-iban.sh` | mod-97 sağlaması geçen TR IBAN (boşluklu da) | HATA |
+| `check-contact.sh` | Türkiye cep telefonu (HATA); e-posta (UYARI; example/test/noreply hariç) | HATA / UYARI |
+| `check-secrets.sh` | Bulut/VCS anahtarları, özel anahtar başlığı, JWT, bot/webhook, kimlik bilgili URL, anahtar=değer | HATA |
+| `check-files.sh` | Hassas yol (proje hook'unun kuralı), anahtar/sertifika, veri ve veritabanı dosyaları, `data/` altında `data/sample` dışı dosya, büyük örnek, çıktılı not defteri | HATA / UYARI |
+| `check-microdata.sh` | Örnek/şablon verisinde kişisel sütun adı (ad, soyad, tckn, adres, telefon...), birim düzeyi kimlik sütunu, satır sayısı eşiği | HATA / UYARI |
+| `check-history.sh` | Git geçmişinde kalan sırlar | HATA |
+
+**Bulgu çıkarsa:** 1) Gerçek veri/sır ise commit etme; anahtarı iptal et/döndür; geçmişi yeniden yazma (force push) kullanıcı onayı gerektirir. 2) Sentetik ise `scripts/kvkk/allowlist.txt` içine `value:<sentetik değer>` ekle (gerekçeyle); geniş `path:` kuralından kaçın. 3) Eşikler: `KVKK_MAX_SAMPLE_ROWS` (varsayılan 500), `KVKK_MAX_SAMPLE_KB` (varsayılan 512).
+Bu kontroller **ilk savunma hattıdır**: temiz çıkması "kişisel veri yok" demek değildir; metin içindeki ad-soyad, adres, serbest metin ve çapraz tablo ifşa riski için yukarıdaki elle kontrol ve `ifsa-kontrolu` skill'i gerekir.

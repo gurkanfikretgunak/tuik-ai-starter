@@ -12,6 +12,9 @@ Kaynaklar: `Makefile`, `scripts/`, `.claude/commands/`. Komutlar kök dizinden �
 | `make audit` | `python3 scripts/vuln-track.py scan --write` | Yeni bulguları kayıt defterine ekler |
 | `make audit-list` | Açık zafiyetler + hook bulguları | `vuln-track.py list` ve `hooks` |
 | `make test-hooks` | `scripts/test-hooks.sh` | Hook davranış testi; HATA satırı varsa başarısız |
+| `make kvkk` | `scripts/kvkk/run-all.sh` | KVKK/sır/mikro veri taraması (maskeli çıktı); `kvkk-staged`, `kvkk-strict`, `kvkk-history` varyantları |
+| `make test-kvkk` | `scripts/kvkk/test-kvkk.sh` | KVKK kontrolcülerinin sentetik fixture testleri |
+| `make kvkk-hook` | `scripts/kvkk/install-git-hooks.sh` | Commit öncesi KVKK kontrolünü yerel git hook'u olarak kurar (isteğe bağlı) |
 | `make sync-cursor` | `scripts/sync-cursor.py` | `.claude` → `.cursor` |
 
 ## Web komutları (`apps/web/package.json`)

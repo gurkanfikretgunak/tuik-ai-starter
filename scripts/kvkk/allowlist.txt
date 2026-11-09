@@ -1,0 +1,6 @@
+# KVKK kontrolcüleri istisna listesi. Her satır tek kural; yorum '#' ile başlar.
+# value:<tam değer>  -> bilinen SENTETİK değer (gerçek veri asla buraya yazılmaz)
+# path:<glob>        -> dosyayı tüm kontrollerden hariç tutar (gerekçesiyle, dar tut)
+#
+# Herkesçe bilinen sentetik test T.C. kimlik numarası (hook testlerinde kullanılır):
+value:10000000146
