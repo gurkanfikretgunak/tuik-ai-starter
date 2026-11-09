@@ -30,4 +30,4 @@ Durum kodu >= 400 ise `ApiError(status, code, message)` fırlatılır. Test içi
 | `src/client.test.ts` | testler |
 
 ## Sözleşme değişince
-`/regenerate-client`: yeni uç için tip + metot ekle, `CLIENT_GAPS` güncelle, test yaz. Şu an istemcide yalnız `health()` vardır; sözleşmedeki `/series/{code}` için metot eklenmesi gerekir (doğrulanmadı: `CLIENT_GAPS` şu an boş, borç kaydedilmemiş).
+`/regenerate-client`: yeni uç için tip + metot ekle, `CLIENT_GAPS` güncelle, test yaz. İstemcide `health()` ve `getSeries(code)` (`GET /series/{code}`) vardır; `CLIENT_GAPS` boştur.

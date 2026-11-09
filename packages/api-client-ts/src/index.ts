@@ -1,4 +1,4 @@
-import type { ApiErrorBody, HealthResponse } from "./types";
+import type { ApiErrorBody, HealthResponse, Series } from "./types";
 export * from "./types";
 
 export type Transport = (path: string, init?: { method?: string; body?: unknown }) => Promise<{ status: number; json(): Promise<unknown> }>;
@@ -23,5 +23,9 @@ export function createClient(baseUrl: string, transport?: Transport) {
     }
     return data as T;
   }
-  return { health: () => call<HealthResponse>("/health") };
+  return {
+    health: () => call<HealthResponse>("/health"),
+    /** GET /series/{code}; gizli hücrede value null ve status "gizli" gelir. */
+    getSeries: (code: string) => call<Series>(`/series/${encodeURIComponent(code)}`),
+  };
 }
